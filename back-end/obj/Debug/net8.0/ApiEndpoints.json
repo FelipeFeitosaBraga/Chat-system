@@ -1,0 +1,20 @@
+[
+  {
+    "ContainingType": "back_end.Rotes.UserRotas\u002B\u003C\u003Ec",
+    "Method": "\u003CAddRotasUser\u003Eb__0_0",
+    "RelativePath": "users/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[back_end.Model.User, back-end, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

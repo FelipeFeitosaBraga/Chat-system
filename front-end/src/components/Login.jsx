@@ -1,34 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
 import {
     TextField,
-    InputLabel,
-    MenuItem,
-    FormControl,
-    Select,
     Button,
 } from '@mui/material';
 import LoginIcon from '@mui/icons-material/Login';
 
-export default function () {
+export default function Login() {
     const navigate = useNavigate();
     const [user, setUser] = useState("");
-    // const [users, setUsers] = useState([]);
-    // useEffect(() => {
-    //     const getUsers = async () => {
-    //         await axios.get(`${import.meta.env.VITE_API_BASE_URL}/users`, {
-    //             withCredentials: true,
-    //             headers: {
-    //                 'Accept': 'application/json',
-    //                 'Content-Type': 'application/json'
-    //             }
-    //         })
-    //             .then(res => setUsers(res.data))
-    //     }
-
-    //     getUsers();
-    // }, []);
 
     return (
         <div style={{ display: "flex", flexDirection: 'column', alignItems: 'center' }}>
@@ -42,18 +22,6 @@ export default function () {
                 label="Usuário"
                 variant="outlined"
             />
-            {/* <FormControl fullWidth>
-                <InputLabel id="select-label">Usuários</InputLabel>
-                <Select
-                    className='mb-2'
-                    labelId="select-label"
-                    label="Usuários"
-                    value={age}
-                    onChange={handleChange}
-                >
-                    {users.map((u, index) => <MenuItem key={index} value={u.Nome}>{u.Nome}</MenuItem>)}
-                </Select>
-            </FormControl> */}
             <Button
                 variant="contained"
                 startIcon={<LoginIcon />}
@@ -61,7 +29,7 @@ export default function () {
                     navigate("/Chat", { state: user })
                 }}
             >
-                Entrar no chat
+                Entrar
             </Button>
         </div>
     )

@@ -33,7 +33,9 @@ if (app.Environment.IsDevelopment())
 app.UseCors("AllowSpecificOrigin");
 app.UseHttpsRedirection();
 app.MapHub<ChatHub>("/chatHub");
+
 app.AddRotasUser();
+app.AddMessageUser();
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()

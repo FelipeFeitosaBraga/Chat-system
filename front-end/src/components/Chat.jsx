@@ -1,18 +1,86 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Fragment } from "react";
 import * as signalR from "@microsoft/signalr";
-import { Button, TextField, CircularProgress } from '@mui/material';
-import { useLocation } from 'react-router-dom';
+import {
+    Button,
+    TextField,
+    List,
+    ListItem,
+    ListItemText,
+    Box,
+    Typography,
+    Divider,
+    Select,
+    MenuItem,
+} from '@mui/material';
+import { useLocation, useNavigate } from 'react-router-dom';
+import axios from "axios";
 
-export default function () {
-    const location = useLocation();
-    const [messages, setMessages] = useState([]);
-    const [message, setMessage] = useState("");
-    const [user, setUser] = useState(location.state);
+export default function Chat() {
+    const navigate = useNavigate();
+    const [messages, setMessages] = useState([]); // Lista de mensagens
+    const [inputMessage, setInputMessage] = useState(''); // Mensagem digitada
     const connectionRef = useRef(null);
-    const [loading, setLoading] = useState(true);
+    const location = useLocation();
+    const [user] = useState(location.state);
+    const [users, setUsers] = useState([]);
+    const [selectedUser, setSelectedUser] = useState("geral");
+
+    if (!location.state)
+        navigate("/")
+
+    const handleSendMessage = async () => {
+        if (user && inputMessage) {
+            try {
+                const params = selectedUser == "geral" ? [user, inputMessage] : [user, selectedUser, inputMessage]
+                await connectionRef.current.invoke(selectedUser == "geral" ? "SendMessage" : "SendMessageTo", ...params)
+                setInputMessage("");
+                refreshMessages(selectedUser);
+            } catch (err) {
+                console.error("Error sending message:", err);
+            }
+        }
+    };
+
+    const getUsers = async () => {
+        try {
+            const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/users`);
+            console.log(response);
+            setUsers(response.data);
+        } catch (error) {
+            console.error(error)
+        }
+    };
+
+    const refreshMessages = async (userSelected) => {
+        const endpoint = userSelected == 'geral' ? '/all' : `?de=${user}&para=${userSelected}`;
+        const url = `${import.meta.env.VITE_API_BASE_URL}/messages${endpoint}`;
+        try {
+            const result = await axios.get(url);
+            const msgs = result.data.map(({ de, texto }) => ({
+                sender: de == user ? "Você" : de,
+                text: texto
+            }));
+            setMessages(() => msgs)
+        } catch (error) {
+            console.error(error)
+        } finally {
+            console.log({ url, userSelected });
+        }
+    }
+
+    const handleSetSelectedUser = async (e) => {
+        setSelectedUser(() => e.target.value);
+        refreshMessages(e.target.value);
+    }
+
+    const scrollToBottom = () => {
+        const chatContainer = document.querySelector('[role="presentation"]');
+        if (chatContainer) {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    };
 
     useEffect(() => {
-        // Cria a conexão com a URL e passa o nome do usuário como parâmetro
         const connection = new signalR.HubConnectionBuilder()
             .withUrl(`${import.meta.env.VITE_API_BASE_URL}/chatHub?user=${user}`, {
                 skipNegotiation: true,
@@ -23,71 +91,142 @@ export default function () {
 
         connectionRef.current = connection;
 
-        if (connection.state === signalR.HubConnectionState.Disconnected) {
-            connection
-                .start()
-                .then(() => {
+        const connectSignalR = async () => {
+            if (connection.state === signalR.HubConnectionState.Disconnected) {
+                try {
+                    await connection.start();
                     console.log("SignalR connected!");
-                    setLoading(false);
-                    connection.on("ReceiveMessage", (user, message) => {
-                        setMessages((prevMessages) => [...prevMessages, { user, message }]);
+
+                    connection.on("ReceiveMessage", () => {
+                        refreshMessages(selectedUser)
                     });
-                })
-                .catch((err) => console.error("Error connecting to SignalR:", err));
+
+                    connection.on("ReceiveMessageFrom", () => {
+                        refreshMessages(selectedUser)
+                    });
+                } catch (err) {
+                    console.error("Error connecting to SignalR:", err);
+                }
+            }
+        };
+
+        const initializeMessages = async () => {
+            await handleSetSelectedUser({ target: { value: 'geral' } });
         }
 
+        connectSignalR();
+        getUsers();
+        initializeMessages();
+        scrollToBottom();
+
         return () => {
-            if (connectionRef.current?.state === signalR.HubConnectionState.Connected) {
+            if (connectionRef.current) {
+                connectionRef.current.off("ReceiveMessage");
                 connectionRef.current.stop();
             }
         };
-    }, [user]);  // Dependência do user
-
-    const sendMessage = async () => {
-        if (user && message) {
-            try {
-                await connectionRef.current.invoke("SendMessage", user, message);  // Envia o nome do usuário junto com a mensagem
-                setMessage("");
-            } catch (err) {
-                console.error("Error sending message:", err);
-            }
-        }
-    };
+    }, [user]);
 
     return (
-        <div>
-            <h1>React + SignalR Chat</h1>
-            {
-                loading ? <CircularProgress /> :
-                    <>
-                        <div>
-                            <TextField
-                                value={user}
-                                onChange={(e) => {
-                                    console.log(e)
-                                    setUser(e.target.value)
-                                }}
-                                label="User"
-                                variant="outlined"
-                            />
-                            <TextField
-                                value={message}
-                                onChange={(e) => setMessage(e.target.value)}
-                                label="Message"
-                                variant="outlined"
-                            />
-                            <Button onClick={sendMessage} variant="contained">Hello world</Button>
-                        </div>
-                        <ul>
-                            {messages.map((msg, index) => (
-                                <li key={index}>
-                                    <strong>{msg.user}:</strong> {msg.message}
-                                </li>
-                            ))}
-                        </ul>
-                    </>
-            }
-        </div>
-    );
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                width: '400px',
+                height: '600px',
+                border: '1px solid #ccc',
+                borderRadius: '8px',
+                overflow: 'hidden',
+            }}
+        >
+            <Box
+                sx={{
+                    backgroundColor: '#3f51b5',
+                    color: '#fff',
+                    padding: '10px',
+                    textAlign: 'center',
+                }}
+            >
+                <Typography variant="h6">Chat - Usuário: {user}</Typography>
 
-}
+                <Box sx={{ display: 'flex', gap: '10px', alignItems: 'center', justifyContent: "center" }}>
+                    <Select
+                        value={selectedUser}
+                        onChange={handleSetSelectedUser}
+                        variant="outlined"
+                        size="small"
+                        defaultValue="geral"
+                        sx={{ backgroundColor: '#fff', color: '#000', borderRadius: '4px' }}
+                    >
+                        <MenuItem value="geral">Geral</MenuItem>
+                        {
+                            users
+                                .filter(({ nome }) => nome != user)
+                                .map(({ id, nome }) => (<MenuItem key={id} value={nome}>{nome}</MenuItem>))
+                        }
+                    </Select>
+                    <Button
+                        variant="contained"
+                        color="secondary"
+                        size="small"
+                        onClick={getUsers}
+                    >
+                        Refresh
+                    </Button>
+                </Box>
+
+            </Box>
+
+            <Box
+                sx={{
+                    flex: 1,
+                    padding: '10px',
+                    overflowY: 'auto',
+                    backgroundColor: '#f5f5f5',
+                    maxHeight: 'calc(100% - 140px)',
+                }}
+                role="presentation"
+            >
+                <List>
+                    {messages.map((message, index) => (
+                        <Fragment key={index}>
+                            <ListItem className="pt-1 pb-1">
+                                <ListItemText
+                                    className={message.sender === 'Você' ? 'text-end' : ''}
+                                    primary={<Typography variant="body2" color="textSecondary">{message.sender}</Typography>}
+                                    secondary={<Typography variant="body1">{message.text}</Typography>}
+                                />
+                            </ListItem>
+                            {index < messages.length - 1 && <Divider />}
+                        </Fragment>
+                    ))}
+                </List>
+            </Box>
+
+            <Box
+                sx={{
+                    display: 'flex',
+                    padding: '10px',
+                    borderTop: '1px solid #ccc',
+                }}
+            >
+                <TextField
+                    variant="outlined"
+                    size="small"
+                    fullWidth
+                    value={inputMessage}
+                    onChange={(e) => setInputMessage(e.target.value)}
+                    placeholder="Digite sua mensagem..."
+                />
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleSendMessage}
+                    sx={{ marginLeft: '10px' }}
+                >
+                    Enviar
+                </Button>
+            </Box>
+        </Box >
+    );
+};

@@ -1,5 +1,52 @@
 [
   {
+    "ContainingType": "back_end.Rotes.MessageRotas\u002B\u003C\u003Ec",
+    "Method": "\u003CAddMessageUser\u003Eb__0_1",
+    "RelativePath": "messages/",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "de",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "para",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[back_end.Model.Message, back-end, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "back_end.Rotes.MessageRotas\u002B\u003C\u003Ec",
+    "Method": "\u003CAddMessageUser\u003Eb__0_0",
+    "RelativePath": "messages/all",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[back_end.Model.Message, back-end, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "back_end.Rotes.UserRotas\u002B\u003C\u003Ec",
     "Method": "\u003CAddRotasUser\u003Eb__0_0",
     "RelativePath": "users/",

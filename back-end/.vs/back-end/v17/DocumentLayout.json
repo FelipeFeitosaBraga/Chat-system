@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|solutionrelative:hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\rotes\\messagerotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|solutionrelative:rotes\\messagerotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|solutionrelative:model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\rotes\\userrotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|solutionrelative:rotes\\userrotas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|solutionrelative:hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|solutionrelative:repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\repository\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,6 +29,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\model\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|solutionrelative:model\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|solutionrelative:model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3CBC39E-0017-4363-8B04-351D0A3B7604}|back-end.csproj|c:\\users\\brunoguez\\documents\\github\\chat-socket-io\\back-end\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -42,17 +46,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 238,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACUAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T21:01:23.346Z",
               "IsPinned": true,
@@ -72,19 +76,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MessageRotas.cs",
+              "DocumentMoniker": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Rotes\\MessageRotas.cs",
+              "RelativeDocumentMoniker": "Rotes\\MessageRotas.cs",
+              "ToolTip": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Rotes\\MessageRotas.cs",
+              "RelativeToolTip": "Rotes\\MessageRotas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T23:31:37.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "UserRotas.cs",
               "DocumentMoniker": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Rotes\\UserRotas.cs",
               "RelativeDocumentMoniker": "Rotes\\UserRotas.cs",
               "ToolTip": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Rotes\\UserRotas.cs",
               "RelativeToolTip": "Rotes\\UserRotas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T01:12:11.316Z"
+              "WhenOpened": "2024-12-12T01:12:11.316Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Model\\User.cs",
               "RelativeDocumentMoniker": "Model\\User.cs",
@@ -102,21 +120,23 @@
               "RelativeDocumentMoniker": "Model\\Message.cs",
               "ToolTip": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Model\\Message.cs",
               "RelativeToolTip": "Model\\Message.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T21:03:50.827Z"
+              "WhenOpened": "2024-12-11T21:03:50.827Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Repository\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repository\\UserRepository.cs",
               "ToolTip": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Repository\\UserRepository.cs",
               "RelativeToolTip": "Repository\\UserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T00:18:21.655Z"
+              "WhenOpened": "2024-12-12T00:18:21.655Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -128,11 +148,12 @@
               "RelativeToolTip": "Repository\\MessageRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T00:18:06.573Z"
+              "WhenOpened": "2024-12-12T00:18:06.573Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -144,15 +165,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "ChatHub.cs",
               "DocumentMoniker": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Hubs\\ChatHub.cs",
               "RelativeDocumentMoniker": "Hubs\\ChatHub.cs",
               "ToolTip": "C:\\Users\\BrunoGuez\\Documents\\GitHub\\chat-socket-io\\back-end\\Hubs\\ChatHub.cs",
               "RelativeToolTip": "Hubs\\ChatHub.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAACUAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAAC4AAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T21:25:27.766Z"
+              "WhenOpened": "2024-12-11T21:25:27.766Z",
+              "EditorCaption": ""
             }
           ]
         }
